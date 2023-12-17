@@ -47,5 +47,31 @@ const myFunction=function(){
 }
 
 //find data type
-console.log(typeof bigNumber)
+//console.log(typeof bigNumber)
 
+
+
+//--------------------------------------------------------------------
+
+// Stack (Primitive) , Heap (NON-primitives)
+
+let myName="Akki";
+
+let anotherName=myName;
+anotherName="Akshay";
+
+console.log(myName);
+console.log(anotherName);
+
+let userOne={
+    email:"user@gmail.com",
+    name:"u1"
+}
+ 
+
+let userTwo=userOne;
+    
+userTwo.email="test@gmail.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
