@@ -44,17 +44,28 @@ const myArr2=new Array(1,2,3,4)
 //  console.log(myArr2)
 //  console.log(newArr)
 
-console.log("A" , myArr2);
+// console.log("A" , myArr2);
 
-const myn1 = myArr2.slice(1,3)
+// const myn1 = myArr2.slice(1,3)
 
-console.log(myn1);
+// console.log(myn1);
 
-console.log("B" , myArr2);
+// console.log("B" , myArr2);
 
 
-const myn2 = myArr2.splice(1,3)
+// const myn2 = myArr2.splice(1,3)
 
-console.log("C" , myArr2);
-console.log(myn2);
+// console.log("C" , myArr2);
+// console.log(myn2);
 
+
+
+
+const testArray = new Array (0,1,2,3,4,5)
+console.log("A  ",testArray);
+
+console.log(testArray.slice(1,3));
+console.log("B " ,testArray);
+
+console.log(testArray.splice(1,3));
+console.log("C ", testArray)
