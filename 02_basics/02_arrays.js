@@ -2,7 +2,7 @@ const marvel_heros=["thor","ironman","spiderman"]
 const dc_heros =["superman","flash","batman"]
 
 //Push: push combine two arrays into single array but structure seems to be array with in arrays
-//concat : it concal two arrays into third arrays
+//concat : it concat two arrays into third arrays
 //spread: same like concat easy to do 
 //flat: array with in array need to separate into individual element
 
@@ -27,4 +27,4 @@ const real_anotherArray=anotherArray.flat(Infinity)
 
 console.log(Array.isArray("Akshay"))
 
-console.log(Array.from("Akshay"))
+console.log(Array.from("Akshay"))// op :- ['A','K','S','H','A','Y']

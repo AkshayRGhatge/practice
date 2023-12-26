@@ -7,8 +7,11 @@ Type of obj
 Singleton when you create an object using constructor
 whenever we declared the object using literals is it not an single ton
 
-NOte: In object key is a string
+NOte: In object key act as a string
 */
+
+
+//Object literals
 
 
 //symbol declare

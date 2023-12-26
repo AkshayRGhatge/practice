@@ -23,7 +23,7 @@ const myArr2=new Array(1,2,3,4)
 //includes: to see if the element is exist in the given array or not return boolean
 //index: need to pass the parameter that checks if the character exist in the array then it of return the index of the array in the list 
 //if -1 does not exist in the list 
-//join(): it copies the array element in the variable of data type  string
+//join(): it copies the array element in the variable of data type string
 //slice: does not manipulate the orignal value for instance array with paramater(1,3) it will print the array position 1 and 2 only.
 //splice: manipulate the original array if two parameters(1,3) it will take the index position from 1 till 3 and remove it from the original array 
 
