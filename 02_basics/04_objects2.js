@@ -70,16 +70,46 @@ const user=[
 console.log(tinderUser)
 
 //In order to find key
-console.log(Object.keys(tinderUser))
+//console.log(Object.keys(tinderUser))
 
 //In order to find the value
-console.log(Object.values(tinderUser))
+//console.log(Object.values(tinderUser))
 
 
 // Entries first make it into array
-console.log(Object.entries(tinderUser))  // [ [ 'id', '123abc' ], [ 'name', 'AKki' ], [ 'isLoggedIn', false ] ]
+//console.log(Object.entries(tinderUser))  // [ [ 'id', '123abc' ], [ 'name', 'AKki' ], [ 'isLoggedIn', false ] ]
 
 // To check tjhe id exist in the object
-console.log(tinderUser.hasOwnProperty('id'))
+//console.log(tinderUser.hasOwnProperty('id'))
 
 
+
+// Destructure
+
+const course={
+    coursename :"javascript",
+    price: "999",
+    instructor:"AG"
+}
+
+//console.log(course.instructor); // one way to get an value
+
+const {coursename:instructor}=course;  //objects destructuring where coursename is an key and colon and instructor is an alias
+
+console.log(instructor);
+
+
+// API concept overview
+// api receive in json structure 
+// {
+//     "name":"Akshay",
+//     "course":"javascript",
+//     "price": "free"
+// }
+
+// some api receive in array format
+// [
+//     {},
+//     {},
+//     {},
+// ]
