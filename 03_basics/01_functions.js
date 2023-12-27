@@ -40,3 +40,48 @@ if(userName === undefined)   // or if(!userName)
 }
 
 console.log(loginUserName("Akshay Ghatge")) // if you do not pass any argumment then it gives undefined 
+
+// Rest operator and spread operator syntax are same depends on the usage where it is called
+// if one want to pass the parameters and not sure how many parameters are need then use rest operators
+
+
+function calculateShoppingCart(val1,val2,...num1){
+    return num1
+}
+// if you are passing have two arguments and one parameters in the function without rest operator it would consider only first parameters
+console.log(calculateShoppingCart(200 ,300,400,500));  // print [400,500] because 200 and 300 are stored in val1 and val2
+
+
+// how to handle and pass object in the function
+// define object
+
+const userObj={
+    name:"AKshay",
+    gender:"Male"
+}
+
+function handleObject(anyobject){
+
+    console.log (`User name is  ${anyobject.name} and price is ${anyobject.gender}`);
+}
+
+handleObject(userObj)
+
+
+handleObject ({
+    name:"Test",
+    gender : "f"
+}
+)
+
+
+const myNewArray =[200,300,400,600]
+
+function returnSecondValue(getArray){
+
+    return getArray[1];
+}
+
+console.log("the second value of the array is", returnSecondValue(myNewArray));
+
+console.log(returnSecondValue([100,500,200]))
