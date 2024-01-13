@@ -31,3 +31,29 @@ buttons.forEach((button) => {
 });
 
 ```
+
+#project solution2
+
+```javascript
+const form = document.querySelector('form');
+//This use case will give empty
+//const height=parseInt(document.querySelector("#height").value)
+form.addEventListener('submit', function (e) {
+  e.preventDefault(); // in form when we click on the button it send the reqest to server by the get or post method so we need to stop that behavior
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    results.innerHTML = 'Please give valid height';
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = 'Please give valid weight';
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    //show the result
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+});
+
+```
