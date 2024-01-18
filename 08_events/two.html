@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+	<h1>Akshay</h1>
+	<button id="stop">Stop</button>
+</body>
+<script>
+	//Set timeout print the value one time only after the time
+	const sayAkshay=function(){
+	console.log("Akshay");
+	};
+	
+	const changeText=function(){
+	document.querySelector('h1').innerHTML="Best JS Series hitesh C"
+	}
+	const changeMe=setTimeout(changeText,2000);
+	//Set Interval function execute several time after the particular time and it keeps runnning
+	
+	//how to stop timeout event(setTimeout) on the button click
+	const stopButton=document.querySelector("button");
+	stopButton.addEventListener('click', function(e){
+	console.log("time stop")
+	clearTimeout(changeMe);
+	})
+
+	
+</script>
+</html>

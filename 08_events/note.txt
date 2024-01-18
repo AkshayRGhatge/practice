@@ -1,0 +1,30 @@
+Event Async code
+Java script  
+    1. Synchronous: single code execution at a time
+    2. Single threaded
+
+Execution Context
+    execute one line of code at a time
+
+Two type of code written in java script
+    1. Blocking code (Read file sync)
+
+        * Blocking code will wait on another program to finish
+        * Block the flow of the program
+        * Example kernel in OS
+
+    2. Non Blocking code  (Read file async )
+
+        * Non Blocking code does not wait for another program to finish
+        * Does not block execution
+        * Not good when the Registration procedure is going on file is storing in the database 
+        and give the message 'Registration sucessfully'
+    
+   
+Async api :
+settimeout();
+Fetch()--->promise-->high priority
+
+
+
+

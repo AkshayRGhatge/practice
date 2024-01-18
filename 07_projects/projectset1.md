@@ -167,3 +167,72 @@ function newGame() {
   });
 }
 ```
+
+## project 5
+
+```javascript
+const insert = document.getElementById('insert');
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class='color'>
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+
+</table>
+  </div>
+  `;
+});
+
+
+```
+
+
+## project 6 solution
+
+```javascript
+const startButton = document.querySelector('#start');
+const stopButton = document.querySelector('#stop');
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+const bgColor = function bgColorUpdate() {
+  let rnd = `rgb(${random(255)},${random(
+    255
+  )},${random(255)})`;
+  console.log(rnd);
+  return rnd;
+};
+let intervalID;
+const changeBgColor= function(){
+	if(!intervalID){
+	intervalID=setInterval(changeBG,1000);
+	}
+	function changeBG(){
+	
+		document.body.style.backgroundColor=bgColor();  
+	}
+}
+
+// click event to start the bg color changes
+const backgroundStart = startButton.addEventListener('click', changeBgColor);
+
+// click event to stop the bg color changes
+const backgroundStart1 = stopButton.addEventListener('click', function () {
+console.log("stop");
+clearInterval(intervalID);
+intervalID=null;   //setting the intervalID to null after the work done
+ 
+});
+```
+

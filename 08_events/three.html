@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+	<h1>Akshay</h1>
+	<button id="start">Start</button>
+	<button id="stop">Stop</button>
+</body>
+<script>
+//Set Interval function execute several time after the particular time and it keeps runnning
+const SayDate=function(){
+console.log("Akshay",Date.now());
+};
+
+
+const intervalID=setInterval(SayDate,2000,"Hi"); 
+
+// clearInterval(intervalID) 
+
+// to start the interval
+const startButton=document.querySelector("#start");
+startButton.addEventListener('click',function(){
+setInterval(intervalID);
+});
+
+//To stop the set interval
+const stopButton=document.querySelector("#stop");
+stopButton.addEventListener('click',function(){
+clearInterval(intervalID);
+});
+
+
+
+</script>
+</html>
