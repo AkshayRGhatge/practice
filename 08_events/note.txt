@@ -23,6 +23,9 @@ Two type of code written in java script
    
 Async api :
 settimeout();
+set interval 
+clearinterval
+clear timeout
 Fetch()--->promise-->high priority
 
 
