@@ -116,3 +116,18 @@ console.log(data);
 }).catch((error)=>{
     console.log(error)
 })
+
+//fetch is the high priority queue and it execute first  even though it is define last
+
+//when fetch execute two things happen 
+//1. Reserve memory space for the data
+
+//Data :- onfulfilled[]
+//onRejection[]
+//2. Web browser
+//provides network request
+
+//If successful request then it goes to onFulfulled[]
+//if error on Rejection[]
+
+//OnFulfilled and OnRejection[] do have a function which are responsible data do have a on fulfilled
