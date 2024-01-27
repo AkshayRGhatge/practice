@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+
+<button id="orange">Orange</button>
+<button id="green">Orange</button>
+   
+</body>
+<script>
+
+    // if we have 500 buttons then does not make sense to copy the content against DRY
+// document.getElementById('orange').onclick=function(){
+//     document.body.style.backgroundColor='orange';
+// }
+
+// document.getElementById('green').onclick=function(){
+//     document.body.style.backgroundColor='green';
+// }
+function clickHandler(color){
+    //document.body.style.backgroundColor=`${color}`;
+
+    return function(){  // in this case the function do have a parameter acess because of closure and lexical
+        document.body.style.backgroundColor=`${color}`;
+    }
+}
+
+//
+</script>
+    <!-- <script>
+
+//function init() {
+    // let name = "Mozilla";
+    // function displayName() {
+    //     console.log(name); 
+    // }
+    // displayName();
+    // }
+    // init();
+
+    function outer(){
+        let username="AKshay"// this do have access to inner function
+
+        function inner(){       //inner function can have acess to the outer function
+            let password=123;  // this do not have access to innerTwo function also not to outer
+            console.log(username);
+        }
+
+        function innterTwo(){  
+            console.log(password);
+        }
+        inner();
+        innterTwo();
+    }
+    outer();
+    console.log(username); // error scope is not
+
+
+    </script> -->
+</html>
