@@ -1,0 +1,27 @@
+Selection the DOM elmenet
+  1. getElementById
+      Ex: <h2 id="reference">References</h2>
+           const referID=document.getElementById('reference');
+           console.log(referID); //<h2 id="reference">References</h2>
+           console.log(referID.textContent); // References
+     Note: it will return the first element if more element have the same id
+    
+  2. getElementByClassName
+       Ex: <h2 class="reference">References</h2>
+           const referID=document.getElementByClassName('reference');
+           console.log(referID); //returns html collections
+           console.log(referID[0].textContent); // References
+       Note: It return html collections and need to access the element need to use [0],[1],etc
+         
+  3. getElementByTagName
+       Ex: <h2 id="reference">References</h2>
+           const referID=document.getElementByTagName('h2');
+           console.log(referID); //return html collection with all the  h2 tags 
+           console.log(referID[0].textContent); // References
+
+          loop through all the element
+            for (let i=0;i<referID.length;i++){
+            console.log(referID[i].textContent);
+            }
+            
+       Note: It return html collections and need to access the element need to use [0],[1],etc
