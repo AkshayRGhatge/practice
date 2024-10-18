@@ -1,4 +1,4 @@
-Selection the DOM elmenet
+Selection in the DOM elmenet
   1. getElementById
       Ex: <h2 id="reference">References</h2>
            const referID=document.getElementById('reference');
@@ -25,3 +25,89 @@ Selection the DOM elmenet
             }
             
        Note: It return html collections and need to access the element need to use [0],[1],etc
+
+4. querySelector: Return the first matching selector only. use with css selector (p,.className,#idName).
+    Ex: <h2 id="idName">IDHeading</h2>
+        let header=document.querySelector('#idName');
+        console.log(header.textContent) //IDHeading
+
+        <p id="idName">IDHeading</h2>
+        let header=document.querySelector('p');
+        console.log(header.textContent) //IDHeading
+
+        <p class="idName">IDHeading1</h2>.
+        <p class="idName">IDHeading2</h2>
+        let header=document.querySelector('.idName');
+        console.log(header.textContent) //IDHeading1 IDHeading2
+
+
+
+5. querySelectorAll: Return the all matching selector as node. use with css selector (p,.className,#idName)
+
+    Ex: 
+        <p class="idName">IDHeading1</h2>.
+        <p class="idName">IDHeading2</h2>
+        let header=document.querySelectorAll('p');
+        header.forEach(function(item){
+            console.log(item.textContent);  //IDHeading1 IDHeading2
+
+        })
+
+* Advance CSS selector:
+	<body>
+    <div class="content">
+        <ul class="menu">
+            <li class="menu-item">Home</li>
+            <li class="menu-item">About</li>
+            <li class="menu-item">Services</li>
+            <li class="menu-item">Contact</li>
+        </ul>
+        <section>
+            <p>First paragraph in section</p>
+            <p>Another paragraph</p>
+        </section>
+        <section>
+            <p>First paragraph in another section</p>
+            <p>More content here</p>
+        </section>
+        <ul class="athletes-list">
+            <li>Athlete 1</li>
+            <li>Athlete 2</li>
+            <li>Athlete 3</li>
+            <li>Athlete 4</li>
+            <li>Athlete 5</li>
+            <li>Athlete 6</li>
+        </ul>
+        <form>
+            <input type="email" placeholder="Enter email">
+            <input type="email" placeholder="Another email">
+        </form>
+        <h2>Heading</h2>
+        <p>Paragraph following a heading</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+let menuItem=document.querySelectorAll('ul > .menu-item')  // ul > .menu-item meaning select menu-item which is a direct child elememnt of the ul tag
+menuItem.forEach(item =>console.log(item.textContent));  //Home About Services Contact 
+Note: each in new line
+
+let firstParagraph=document.querySelectorAll('section > p:first-child'); //first p tag within the section tag directly
+fistParagraph.forEach(item =>console.log(item.textContent));  //First paragraph in section  First paragraph in another section
+
+let lastParagraph=document.querySelectorAll('section > p:last-child'); //last p tag within the section tag directly
+lastParagraph.forEach(item =>console.log(item.textContent));  //Last paragraph in section   Another paragraph
+
+let lastItem=document.querySelectorAll('ul > li:last-child'); //last li tag within the ul tag directly
+lastItem.forEach(item =>console.log(item.textContent));  // Contact    Athlete 6
+
+
+let emailInputs=document.querySelectorAll('input[type="email"]'); //  selects all <input> elements of type email.
+emailInputs.forEach(item =>console.log(item.placeholder));  //Enter email   Another email
+
+let thirdListItems=document.querySelectorAll('ul > li:nth-child(3n)'); //  selects every third <li> element inside a <ul>
+thirdListItems.forEach(item =>console.log(item.textContent));  //Services Athlete 3  Athlete 6
+
+let paragraphAfterHeading=document.querySelectorAll('h2 + p'); // select first p tag  immediately after h2 tag
+paragraphAfterHeading.forEach(item =>console.log(item.textContent));  //Paragraph following a heading
+
