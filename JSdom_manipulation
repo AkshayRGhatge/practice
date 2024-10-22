@@ -111,3 +111,84 @@ thirdListItems.forEach(item =>console.log(item.textContent));  //Services Athlet
 let paragraphAfterHeading=document.querySelectorAll('h2 + p'); // select first p tag  immediately after h2 tag
 paragraphAfterHeading.forEach(item =>console.log(item.textContent));  //Paragraph following a heading
 
+
+
+====================================================================================================
+TO DO: Closure, parentNode, childNode, children, closest, contains, matches CH03
+====================================================================================================
+
+
+
+
+====================================================================================================
+Modifying DOM elements
+====================================================================================================
+
+--innerText : add the text content
+
+let message=document.getElementById('text')
+message.innerText="Akshay";
+
+--innerHTML: add the html + text content  if there are any old content it will replace to the new
+let message=document.getElementById('text')
+message.innerHTML="<p>Welcome to site</p>";
+
+
+--Value of Input Element
+<div id="formContainer">
+        <h1>User Information</h1>
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" aria-label="Name">
+
+        <h2>Choose Your Department</h2>
+        <select id="departmentSelect" aria-label="Select Department">
+            <option value="sales">Sales</option>
+            <option value="marketing">Marketing</option>
+            <option value="development">Development</option>
+        </select>
+
+        <h2>Employee Status</h2>
+        <label>
+            <input type="radio" name="status" value="full-time" checked> Full-Time
+        </label>
+        <label>
+            <input type="radio" name="status" value="part-time"> Part-Time
+        </label>
+
+        <h2>Newsletter Subscription</h2>
+        <label>
+            <input type="checkbox" id="newsletterCheckbox"> Subscribe to newsletter
+        </label>
+
+        <button id="updateButton" onclick="updatePage()">Update Information</button>
+    </div>
+
+* For input box
+let nameInput=document.getElementById('nameInput')
+conosle.log(nameInput.value);
+nameInput.value='Akshay Ghatge';  //set the value 
+
+* for  dropdown
+let nameInput=document.getElementById('departmentSelect')
+conosle.log(nameInput.value);
+nameInput.value='Marketing';  //set the value 
+
+* for  radio button
+let radioButtons =document.querySelectorAll('input[type="radio"][name="status"]');
+radioButtons.forEach(item=>{
+if(item.checked){  // checked if the radio button is checked
+console.log('Employee Status:', item.value);
+}
+})
+
+* for checkbox
+let newsLetterChecked=document.getElementById('newsletterCheckbox');
+conosle.log(newsLetterChecked.checked);
+newsLetterChecked.checked=true;  //set the value 
+
+
+
+
+
+
+
