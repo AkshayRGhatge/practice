@@ -187,8 +187,166 @@ conosle.log(newsLetterChecked.checked);
 newsLetterChecked.checked=true;  //set the value 
 
 
+====================================================================================================
+Manipulating Attributes and Data attributes
+====================================================================================================
+
+getAttribute and setAttribute
+
+ <div id="contentArea">
+        <h1>Attribute Manipulation Example</h1>
+        <img id="exampleImage" src="puppy.jpg" alt="Puppy Image">
+        <a id="exampleLink" href="https://example.com">Visit Example.com</a>
+        <button id="changeAttributesButton" onclick="changeAttributes()">Change Attributes</button>
+    </div>
 
 
+    // Changing the source of an image
+    let exampleImage = document.getElementById('exampleImage');
+    exampleImage.setAttribute('src', 'puppy2.jpg');
+
+   // Changing the href of link
+    let exampleImage = document.getElementById('exampleLink');
+    exampleImage.setAttribute('href', 'https://google.com');
+    exampleImage.textContent="visit google';
+
+====================================================================================================
+Working with  Classes
+====================================================================================================
+
+JS provides method to add, remove and toggle classes
+
+Method:
+
+	element.classList.add()
+	element.classList.toggle()	//remove if it there class or add if it is not
+	element.classList.remove()
+
+let textToHighLight=document.getElementById('textTohighlight');
+textToHighlight.classList.toggle('highlight');
+
+
+Style with the JS
+
+ let textToStyle = document.getElementById('textToStyle');
+
+    // Changing background color
+    textToStyle.style.backgroundColor = 'yellow';
+
+    // Changing font size
+    textToStyle.style.fontSize = '20px';
+
+    // Changing text color
+    textToStyle.style.color = 'blue';
+
+    // Adding padding
+    textToStyle.style.padding = '10px';
+
+    // Changing font weight
+    textToStyle.style.fontWeight = 'bold';
+
+
+
+====================================================================================================
+Create , Adding and Manage nodes
+====================================================================================================
+* Create Element
+	document.createElement('div')
+* Append: to append the element in the dom
+	document.appendChild 
+
+	 <div id="contentArea">
+			<h1>DOM Manipulation Example</h1>
+	</div>
+
+// Create a new paragraph element
+let newParagraph = document.createElement('p');
+
+// Set text content for the new element
+newParagraph.textContent = 'This is a new paragraph added by JavaScript.';
+
+// Optionally, set some attributes
+newParagraph.setAttribute('id', 'newParagraph');
+newParagraph.style.color = 'blue';
+
+// Append the new element to the content area
+let contentArea = document.getElementById('contentArea');
+contentArea.appendChild(newParagraph);
+
+* Option() take 4 arguments  
+		1 argument:  innerText 
+		2 arguments: innerText, value
+		3 and 4 for selecting option
+
+
+// Populating department dropdown
+let departmentSelect = document.getElementById('departmentSelect');
+['Sales', 'Marketing', 'Development'].forEach(department => {
+    let option = new Option(department, department.toLowerCase());
+    departmentSelect.add(option);
+});
+
+// Generating an employee profile picture
+let profilePictureDiv = document.getElementById('profilePicture');
+let employeeImage = new Image();
+employeeImage.src = 'employee-placeholder.jpg';  // Replace with a valid image source
+employeeImage.alt = 'Employee Profile Picture';
+profilePictureDiv.appendChild(employeeImage);
+
+
+====================================================================================================
+Inserting the elements
+====================================================================================================
+1. appendChild: append the child at the end of the parent
+
+let parentElement=document.getElementById('testParent');
+let newElement= document.createElement('li');
+newElement.textContent='This is test';
+parentElement.appendChild(newElement)
+
+2.insertBefore: allow to add the new element before the element
+
+let newElementInsert= document.createElement('li');
+newElementInsert.textContent='Urgent Task';
+parentElement.insertBefore(newElementInsert,parentElement.firstChild)  //first parameter is inserting the element , second element is where to insert before 
+
+3. innerHTML will override the existing nodes and replace with the new one
+let dynamicContent = document.getElementById('dynamicContent');
+dynamicContent.innerHTML = '<p>New project announcement coming soon!</p>';
+
+====================================================================================================
+Cloning , Replacing and Removing nodes
+====================================================================================================
+
+1. cloneNode: Duplicate the node, we can set to ignore the child node or clone them as well
+
+element.cloneNode(true)  // clones the element and its children
+element.cloneNode(false) // clones the element without its children
+
+// Clone a list item and add it to a list
+let taskList = document.getElementById('taskList');
+let firstTask = taskList.firstElementChild.cloneNode(true);
+firstTask.textContent = 'Prepare quarterly report';
+taskList.appendChild(firstTask); //add Prepare quarterly report at the end since it is appended at the end
+
+2. replaceChild: used for replacing an element, 
+
+// Replace a paragraph with a new one
+let announcements = document.getElementById('announcements');
+let newAnnouncement = document.createElement('p');
+newAnnouncement.textContent = 'New office opening next month.';
+let oldAnnouncement = document.getElementById('announcementText');
+announcements.replaceChild(newAnnouncement, oldAnnouncement);
+
+
+3. removeChild:  Remove an element from parent node
+// Remove an element from the page
+let removeButton = document.getElementById('removeButton');
+removeButton.addEventListener('click', () => {
+    if (announcements.firstChild) {
+        announcements.removeChild(announcements.firstChild);
+    }
+});
 
 
 
