@@ -392,6 +392,31 @@ document.getElementById("logButton").addEventListener('click', () => console.log
 Event object: Whenever an event happens an event object is created,Messenger that contains the details about the event, which element initiate the event, if key is clicked knows which key is click 
 document.getElementById("logButton").addEventListener('click', (event) => console.log(event));
 
+====================================================================================================
+Removing Event listeners: Removing an event listener can prevent memory leaks and all sorts of unwanter behavior.
+====================================================================================================
+ 
 
+   <div id="appContainer">
+	<button id="actionButton">Perform One-Time Action</button>
+    </div>
 
+	document.addEventListener('DOMContentLoaded', () => {
+	    let actionButton = document.getElementById('actionButton');
+	
+	    // Add the event listener
+	    actionButton.addEventListener('click', handleActionOnce);
+	});
+	
+	function handleActionOnce() {
+	    let actionButton = document.getElementById('actionButton');
+	    console.log('Action performed!');
+	    // Remove the event listener after first execution
+	    actionButton.removeEventListener('click', handleActionOnce);  // this will execute once and then it will not execute again so no console message even if the button is clicked again
+	}
 
+Eventlistener in the DEv tool
+
+====================================================================================================
+Event Propogation
+====================================================================================================
