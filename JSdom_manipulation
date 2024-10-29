@@ -348,5 +348,50 @@ removeButton.addEventListener('click', () => {
     }
 });
 
+====================================================================================================
+Event Handler
+====================================================================================================
+
+1. Way to handle the event.
+2. Handler then connected to the event
+
+for example: when the button is click add the event listener or print the console message.
+
+
+  <div id="dashboard">
+        <h1>Company Dashboard</h1>
+        <button id="logButton">Don't Click Me</button>
+    </div>
+
+
+	assign the event handler do not execute the function so in the above function do not add the bracket in the logMessage so 
+	
+	
+	document.getElementById("logButton").onclick=logMessage; // if we use the logMessage() it will print directly the console message 
+
+Annoymous or  arrow function
+	document.getElementById("logButton").onclick=
+		function (){
+		console.log("Don't click me");
+		};
+or
+	document.getElementById("logButton").onclick=
+		=()=>{
+		console.log("Don't click me");
+		};
+Downside of the eventhandler:
+	1. what if we want to handle multiple event when the button is clicked
+	2. One big function
+
+====================================================================================================
+Event Listner: listen for events and respond to them, webpage senses
+====================================================================================================
+document.getElementById("logButton").addEventListener('click', () => console.log("Don't click me!"));
+document.getElementById("logButton").addEventListener('click', () => console.log("Stop")); //multiple event listener for the same click event
+
+Event object: Whenever an event happens an event object is created,Messenger that contains the details about the event, which element initiate the event, if key is clicked knows which key is click 
+document.getElementById("logButton").addEventListener('click', (event) => console.log(event));
+
+
 
 
